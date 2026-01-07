@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+:root {
+    --primary-color: #eb2525; /* Cor primária (azul claro) */
+    --secondary-color: #e8eaed; /* Cor secundária (cinza claro) */
+    --tertiary-color: #9aa0a6; /* Cor terciária (cinza médio) */
+    --bg-color: #16171a; /* Cor de fundo (cinza escuro) */
+}
+
+body {
+    margin: 0; /* Remove a margem padrão do body */
+    background: var(--bg-color); /* Define a cor de fundo usando uma variável */
+    color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável */
+    font-family: "Love Ya Like A Sister", cursive;; /* Define a família da fonte */
+}
+
+header {
+    /* Torna o header full-screen e centraliza conteúdo */
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column; /*Quebra linha do botão com o h1*/
+    align-items: center; /*Coloca no centro da tela*/
+    justify-content: center;
+    background: var(--bg-color);
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 2.0rem; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem padrão */
+    font-weight: 500; /* Peso da fonte (médio) */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    color: rgba(255, 192, 203, 0.911);
+    overflow-wrap: break-word;
+}
+
+#botao-inicio {
+    padding: 1rem 2rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Arredonda as bordas */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    font-family: inherit; /* Herda a família da fonte */
+    font-weight: 500; /* Peso da fonte */
+    font-size: 1rem; /* Tamanho da fonte */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transição suave para cor de fundo e cor do texto */
+    background-color: var(--tertiary-color); /* Cor de fundo */
+    color: var(--secondary-color); /* Cor do texto */
+    border: 1px solid var(--bg-color); /* Adiciona uma borda */
+}
+
+#botao-inicio:hover {
+    background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
+    color: var(--bg-color); /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
+}
+
+#botao-inicio:active {
+    transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
+}
+
+/* Padroniza imagens da pasta `photo` e a imagem com id #imagens */
+img[src*="photo/"], #imagens {
+    /* Largura responsiva: entre 220px e 600px */
+    width: clamp(220px, 45vw, 600px);
+    /* Garante proporção uniforme para todas as imagens (ajuste 4/3 para outra proporção) */
+    aspect-ratio: 4 / 3;
+    display: block;
+    margin: 0.6rem auto;
+    object-fit: cover; /* preenche a caixa mantendo proporção; recorta quando necessário */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    /* Borda rosa responsiva */
+    border: clamp(2px, 0.6vw, 12px) solid rgba(255,192,203,0.92);
+}
+
+/* Pequeno ajuste para telas muito pequenas */
+@media (max-width: 420px) {
+    img[src*="photo/"] , #imagens {
+        width: 90%;
+        border-radius: 10px;
+    }
+}
+
+/* Ajustes para telas de celular e tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte em telas menores */
+        white-space: normal;
+        text-align: center;
+    }
+
+    #botao-inicio {
+        padding: 0.8rem 1.5rem; /* Reduz o padding do botão */
+        font-size: 0.9rem; /* Reduz a fonte do botão */
+    }
+
+    img[src*="photo/"], #imagens {
+        width: 80vw; /* Usa a largura da viewport para a imagem */
+    }
+}

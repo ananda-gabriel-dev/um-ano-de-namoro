@@ -1,0 +1,65 @@
+
+body {
+    display:flex;
+    align-items:center; 
+    justify-content:center; 
+    min-height:100vh; 
+    padding:24px; 
+}
+
+.carta {
+    max-width:720px; 
+    background:rgba(255,255,255,0.03); 
+    padding:28px; 
+    border-radius:12px; 
+    box-shadow:0 6px 20px rgba(0,0,0,0.35); 
+    margin-bottom: 80px; /* Adicionado espaço para a barra de ações fixa */
+}
+
+.carta h1 {
+    margin-top:0; 
+}
+
+.actions {
+    position: fixed; /* Posição fixa na parte inferior da tela */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    color: var(--tertiary-color); /* Cor do texto */
+    background-color: var(--bg-color); /* Cor de fundo */
+    padding: 15px 20px; /* Espaçamento interno */
+    border-top: 1px solid #3c4043; /* Borda superior */
+    font-size: 0.8rem; /* Tamanho da fonte */
+    z-index: 10; /* Garante que a barra fique sobre outros elementos */
+}
+
+.actions-Location{
+    color: #9aa0a6; /* Cor do texto */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+.actions-links {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Habilita o layout flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Espaçamento entre os links */
+}
+
+
+.actions-links a {
+    color: var(--secondary-color); /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.2s; /* Transição suave para a cor */
+}
+
+.actions-links a:hover {
+    color: var(--accent-color); /* Muda a cor do link ao passar o mouse (variável não definida) */
+}
+
+.btn {
+    padding:8px 14px;
+    border-radius:8px; 
+    border: none; 
+    cursor:pointer; 
+}
